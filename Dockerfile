@@ -5,11 +5,11 @@ FROM node:13.12.0-alpine
 WORKDIR /app
 # install app dependencies
 COPY . ./app
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm install
+RUN npm run build
 
 # add app
-COPY . ./
+COPY . ./app
 
 # start app
 CMD ["npm", "start"]
